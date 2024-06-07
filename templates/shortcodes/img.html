@@ -2,20 +2,37 @@
 <figure {% if fit %}class={{ fit }}{% endif %}>
   <picture>
     {%- set image_path = page.colocated_path ~ src %}
-    {%- if config.extra.image_format is defined %}
-      {%- set image_meta = get_image_metadata(path=image_path) %}
+    {%- set image_meta = get_image_metadata(path=image_path) %}
+    {%- if config.extra.covert_images %}
       {%- set image = resize_image(path=image_path, width=image_meta.width, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
-      <source media="(min-width: 1200px)" srcset="{{ image.url }}">
+      {%- if config.extra.create_mobile_images %}
+        <source media="(min-width: 1200px)" srcset="{{ image.url }}">
+        {%- if image_meta.width >= 1440 %}
+        {%- set image_large = resize_image(path=image_path, width=1440, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
+        <source media="(min-width: 768px)" srcset="{{ image_large.url }}">
+        {%- endif %}
+        {%- if image_meta.width >= 1080 %}
+        {%- set image_medium = resize_image(path=image_path, width=1080, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
+        <source media="(min-width: 0)" srcset="{{ image_medium.url }}">
+        {%- endif %}
+      {%- endif %}
+      <img src="{{ image.url }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
+    {%- elif config.extra.create_mobile_images %}
+      <source media="(min-width: 1200px)" srcset="{{ get_url(path=image_path) }}">
       {%- if image_meta.width >= 1440 %}
-      {%- set image_large = resize_image(path=image_path, width=1440, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
+      {%- set image_large = resize_image(path=image_path, width=1440, height=image_meta.height, format="auto", op="fit") %}
       <source media="(min-width: 768px)" srcset="{{ image_large.url }}">
       {%- endif %}
       {%- if image_meta.width >= 1080 %}
-      {%- set image_medium = resize_image(path=image_path, width=1080, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
+      {%- set image_medium = resize_image(path=image_path, width=1080, height=image_meta.height, format="auto", op="fit") %}
       <source media="(min-width: 0)" srcset="{{ image_medium.url }}">
       {%- endif %}
-      <img src="{{ image.url }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
+      <img src="{{ get_url(path=image_path) }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
     {%- else %}
+      {%- if mobile_src %}
+      <source media="(min-width: 768px)" srcset="{{ get_url(path=image_path) }}">
+      <source media="(min-width: 0)" srcset="{{ get_url(path=page.colocated_path ~ mobile_src) }}">
+      {%- endif %}
       <img src="{{ get_url(path=image_path) }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
     {%- endif %}
     <div class="img-action">

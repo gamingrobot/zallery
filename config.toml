@@ -21,15 +21,18 @@ menu = [
 
 author_url = "https://example.com"
 
-# hide_copyright = true # hide the copyright at the bottom of the page
-# hide_poweredby = true # hide the poweredby at the bottom of the page
+hide_copyright = false # set to true to hide the copyright at the bottom of the page
+hide_poweredby = false # set to true to hide the poweredby at the bottom of the page
 
+# gallery settings
 thumbnail_size = 400 # May need to adjust the media queries in _gallery.scss
 thumbnail_format = "jpg" # auto, jpg, png, webp
 thumbnail_quality = 75 # value in percentage, only for webp and jpg
 
-# optional, only applies to `img` shortcode images, when commented images will not be auto converted
-image_format = "auto" # auto, jpg, png, webp
+# img shortcode settings
+covert_images = false # set to true to convert images to to the format in the image_format setting 
+create_mobile_images = false # set to true to create mobile friendly versions of the image
+image_format = "webp" # auto, jpg, png, webp
 image_quality = 100 # value in percentage, only for webp and jpg
 
 # https://modelviewer.dev/

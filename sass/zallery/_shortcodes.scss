@@ -73,3 +73,10 @@ video {
         height: calc(70vh - $topbar-height) !important;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .img-action {
+        background: $body-bg-dark !important;
+    }
+
+}

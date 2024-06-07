@@ -22,7 +22,19 @@
 
     .artwork {
         height: 100% !important;
-        flex-direction: column-reverse !important;
+        flex-direction: column !important;
+    }
+
+    .artwork-view {
+        padding-bottom: 0 !important;
+    }
+
+    .artwork-view .credit {
+        display: none !important;
+    }
+
+    .artwork-sidebar .credit {
+        display: unset !important;
     }
 
     .page {
@@ -40,11 +52,11 @@
     }
 
     a {
-        color: $topbar-link-color-dark !important;
+        color: $link-color-dark !important;
 
         &:focus,
         &:hover {
-            color: $topbar-link-hover-color-dark !important;
+            color: $link-hover-color-dark !important;
         }
     }
 
@@ -67,10 +79,13 @@
 
     .topbar {
         background-color: $topbar-color-dark !important;
+        a {
+            color: $topbar-link-color-dark !important;
+    
+            &:focus,
+            &:hover {
+                color: $topbar-link-hover-color-dark !important;
+            }
+        }
     }
-
-    .img-action {
-        background: $body-bg-dark !important;
-    }
-
 }

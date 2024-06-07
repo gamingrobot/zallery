@@ -1,0 +1,61 @@
+.artwork {
+    padding-top: $topbar-height;
+    display: flex;
+    height: 100vh;
+    flex: 1;
+}
+
+.artwork-view,
+.artwork-sidebar {
+    overflow-y: auto;
+
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.artwork-view > * { //all children art
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 1.25rem;
+}
+
+.artwork-view > p > img { //handle pure markdown images
+    padding-top: 1.25rem;
+}
+
+.artwork-view > p {
+    margin: 0;
+    padding: 0;
+}
+
+.artwork-view {
+    padding-left: $large-device-content-padding;
+    padding-right: $large-device-content-padding;
+    flex: 4;
+    text-align: center;
+
+    img {
+        max-width: 100%;
+        max-height: calc(90vh - $topbar-height);
+    }
+}
+
+.artwork-meta {
+    .date {
+        font-size: $meta-font-size;
+        color: $meta-color;
+    }
+
+    p {
+        margin-top: 0;
+    }
+}
+
+.artwork-sidebar {
+    flex: 1;
+    padding-top: $large-device-content-padding;
+    padding-left: $large-device-content-padding;
+    padding-right: $large-device-content-padding;
+}

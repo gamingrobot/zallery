@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%; // for iOS
+    box-direction: normal;
+    font-family: $root-font-family;
+    font-size: $large-device-font-size;
+    line-height: $root-line-height;
+    font-weight: $root-font-weight;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: $body-color;
+    background-color: $body-bg;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: $heading-font-weight;
+}
+
+h1 {
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: $h2-font-size;
+    margin-bottom: .5rem;
+}
+
+h3 {
+    font-size: $h3-font-size;
+}
+
+h4 {
+    font-size: $h4-font-size;
+}
+
+h5 {
+    font-size: $h5-font-size;
+}
+
+%quotebox {
+    padding-left: 1rem;
+    margin-left: 0px;
+    margin-right: 0px;
+    //border-radius: 6px;
+    border-left: 6px solid;
+    border-right: 6px solid transparent;
+    border-right-width: 6px;
+    border-right-style: solid;
+    border-right-color: rgba(0, 0, 0, 0) transparent;
+    color: $gray-7;
+}
+
+blockquote {
+    //background-color: #fafafa;
+    border-left-color: #e6e6e6;
+    @extend %quotebox;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+    word-wrap: break-word;
+
+    &:focus,
+    &:hover {
+        @include link-hover();
+
+        &.action {
+            @include link-no-decoration();
+        }
+
+        &.thumbnail-link {
+            @include link-no-decoration();
+        }
+    }
+
+    &.action {
+        @include link-no-decoration();
+    }
+
+    &.thumbnail-link {
+        @include link-no-decoration();
+    }
+}
+
+.content {
+    display: flex;
+}
+
+.credit {
+    padding-top: 1rem;
+    text-align: center;
+    font-size: $credit-font-size;
+    line-height: 1.1rem;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    padding-top: $topbar-height;
+    padding-left: $large-device-content-padding;
+    padding-right: $large-device-content-padding;
+    padding-bottom: $large-device-content-padding;
+    margin-left: auto;
+    margin-right: auto;
+}

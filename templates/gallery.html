@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class=page>
+{% block gallery_header %}
+{% endblock gallery_header %}
+<section class=gallery-view>
+{% for page in section.pages -%}
+{% include "partials/thumbnail.html" %}
+{%- endfor %}
+</section>
+{% include "partials/credit.html" %}
+</div>
+{% endblock content %}

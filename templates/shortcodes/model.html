@@ -1,0 +1,10 @@
+<model-viewer class="model-viewer"
+    camera-controls
+    disable-zoom
+    touch-action="pan-y"
+    src="{{ get_url(path=page.colocated_path ~ src) }}"
+    {% if skybox %}skybox-image="{{ get_url(path=page.colocated_path ~ skybox) }}"{% endif %}
+    {% if poster %}poster="{{ get_url(path=page.colocated_path ~ poster) }}"{% endif %}
+    {% if alt %}alt="{{ alt }}"{% endif %}
+    loading="lazy">
+</model-viewer>

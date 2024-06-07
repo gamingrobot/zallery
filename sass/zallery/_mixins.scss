@@ -1,0 +1,13 @@
+@mixin link-no-decoration() {
+    border-style: none;
+    text-decoration: none;
+}
+
+@mixin link-hover() {
+    color: $link-hover-color;
+    border-bottom: 1px dotted $gray-4;
+    text-decoration: none;
+    background: transparent;
+    background-color: transparent;
+    word-wrap: break-word;
+}

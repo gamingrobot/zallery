@@ -1,0 +1,30 @@
+{% import "partials/macros.html" as macros %}
+<figure {% if fit %}class={{ fit }}{% endif %}>
+  <picture>
+    {%- set image_path = page.colocated_path ~ src %}
+    {%- if config.extra.image_format is defined %}
+      {%- set image_meta = get_image_metadata(path=image_path) %}
+      {%- set image = resize_image(path=image_path, width=image_meta.width, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
+      <source media="(min-width: 1200px)" srcset="{{ image.url }}">
+      {%- if image_meta.width >= 1440 %}
+      {%- set image_large = resize_image(path=image_path, width=1440, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
+      <source media="(min-width: 768px)" srcset="{{ image_large.url }}">
+      {%- endif %}
+      {%- if image_meta.width >= 1080 %}
+      {%- set image_medium = resize_image(path=image_path, width=1080, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
+      <source media="(min-width: 0)" srcset="{{ image_medium.url }}">
+      {%- endif %}
+      <img src="{{ image.url }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
+    {%- else %}
+      <img src="{{ get_url(path=image_path) }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
+    {%- endif %}
+    <div class="img-action">
+      <a class="action" href="{{ get_url(path=image_path) }}">{{ macros::svg_maximize() }}</a>
+    </div>
+  </picture>
+  {%- if text %}
+  <figcaption>
+    <span class="img-caption">{{ text }}</span>
+  </figcaption>
+  {%- endif %}
+</figure>

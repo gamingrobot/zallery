@@ -1,0 +1,74 @@
+{% import "partials/macros.html" as macros %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport"/>
+        <meta name="theme-color" content="#0d3a58"/>
+        <title>
+            {% block title %}
+                {{ config.title }}
+            {% endblock title %}
+        </title>
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ get_url(path="apple-touch-icon-144-precomposed.png") }}">
+        <link href="{{ get_url(path="favicon.png") }}" rel="icon" type="image/x-icon"/>
+        {%- if config.generate_feed %}
+            <link rel="alternate" type={% if config.feed_filename == "atom.xml" %} "application/atom+xml" {% else %} "application/rss+xml" {% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}"/>
+        {%- endif %}
+        {% block metadata %}
+            <meta content="website" property="og:type"/>
+            <meta content="{{ config.title }}" property="og:site_name"/>
+            <meta content="{{ config.base_url | safe }}" property="og:url"/>
+            <meta content="{{ config.base_url | safe }}" property="twitter:url"/>
+            {%- if section.title %}
+                <meta content="{{ section.title }}" property="og:title"/>
+                <meta content="{{ section.title }}" property="twitter:title"/>
+            {%- endif %}
+            {%- if section.description %}
+                <meta content="{{ section.description }}" property="og:description"/>
+                <meta content="{{ section.description }}" property="description"/>
+                <meta content="{{ section.description }}" property="twitter:description"/>
+            {%- endif %}
+        {% endblock metadata %}
+        {# CSS #}
+        {% block css %}
+            <link href="{{ get_url(path="fonts.css") }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ get_url(path="zallery.css") }}" rel="stylesheet" type="text/css"/>
+        {% endblock css %}
+        {% block extra_head %}
+        {% endblock extra_head %}
+    </head>
+    <body>
+        <div class=container>
+            <nav class=topbar>
+                <div class=topbar-text>
+                    <div class=topbar-title>
+                        <a href="{{ config.base_url }}"><span>{{ config.title }}</span></a>
+                    </div>
+                    <div class=topbar-menu>
+                        {% for item in config.extra.menu %}
+                        {%- if item.url is matching("https?://") %}
+                        <a href="{{ item.url }}"><span>{{ item.name }}</span></a>
+                        {%- else %}
+                        <a href="{{ get_url(path=item.url)}}"><span>{{ item.name }}</span></a>
+                        {%- endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </nav>
+            <main class=content>
+                {% block content %}
+                {% endblock content %}
+            </main>
+        </div>
+        {% block js_body %}
+        {% endblock js_body %}
+        {% if config.extra.goatcounter %}
+            <script data-goatcounter="https://{{ config.extra.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+        {% endif %}
+        {% if config.extra.modelviewer %}
+            <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+        {% endif %}
+    </body>
+</html>

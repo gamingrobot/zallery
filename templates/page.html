@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ page.title }} - {{ config.title }}
+{% endblock title %}
+
+{% block metadata %}
+    <meta content="website" property="og:type"/>
+    <meta content="{{ config.title }}" property="og:site_name"/>
+    <meta content="{{ current_url | safe }}" property="og:url"/>
+    <meta content="{{ current_url | safe }}" property="twitter:url"/>
+    <meta content="summary_large_image" name="twitter:card"/>
+    {%- if page.title %}
+        <meta content="{{ page.title }}" property="og:title"/>
+        <meta content="{{ page.title }}" property="twitter:title"/>
+    {%- endif %}
+    {%- if page.description %}
+        <meta content="{{ page.description }}" property="og:description"/>
+        <meta content="{{ page.description }}" property="description"/>
+        <meta content="{{ page.description }}" property="twitter:description"/>
+    {%- endif %}
+    {%- if page.extra.thumbnail %}
+    {%- set image_path = page.colocated_path ~ page.extra.thumbnail %}
+    {%- set image = resize_image(path=image_path, width=1500, height=1500, op="fit") %}
+        <meta content="{{ image.url }}" property="og:image"/>
+        <meta content="{{ image.url }}" property="twitter:image"/>
+    {%- endif %}
+{% endblock metadata %}
+
+{% block content %}
+<div class=artwork>
+<section class=artwork-view>
+    {{ page.content | safe }}
+    {% include "partials/credit.html" %}
+</section>
+<aside class=artwork-sidebar>
+    <h1>{{ page.title }}</h1>
+    <div class=artwork-meta>
+        <span class=date>{{ page.date | date(format="%b %d, %Y") }}</span>
+        {% if page.description -%}
+            <p>{{ page.description | markdown(inline=true) | safe }}</p>
+        {%- endif -%}
+        {%- if page.taxonomies.tags -%}
+        {% for tag in page.taxonomies.tags %}
+            <a class="badge badge-tag" href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>
+        {% endfor %}
+        {%- endif %}
+    </div>
+</aside>
+</div>
+{% endblock content %}
+
+{% block js_body %}
+{% endblock js_body %}
+

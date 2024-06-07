@@ -1,0 +1,8 @@
+<div class="credit">
+    {%- if not page.extra.hide_copyright and not section.extra.hide_copyright and not config.extra.hide_copyright %}
+    <div class=copyright>&copy; {{ now() | date(format="%Y") }} <a href="{{ config.extra.author_url }}" rel="noopener me">{{ config.author }}</a></div>
+    {%- endif %}
+    {%- if not config.extra.hide_poweredby %}
+    <div class=poweredby>Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> &amp; <a href="https://github.com/gamingrobot/zallery/" target="_blank">Zallery</a></div>
+    {%- endif %}
+</div>

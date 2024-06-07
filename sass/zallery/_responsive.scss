@@ -1,0 +1,76 @@
+@media (max-width: 768px) {
+    html {
+        font-size: $small-device-font-size !important;
+    }
+
+    h1 {
+        margin-top: 0 !important;
+    }
+
+    .topbar-title {
+        flex: 1 1 auto !important;
+        padding-left: 1rem !important;
+    }
+
+    .topbar-text {
+        max-width: 100% !important;
+    }
+
+    .topbar-menu a {
+        padding-right: 1rem !important;
+    }
+
+    .artwork {
+        height: 100% !important;
+        flex-direction: column-reverse !important;
+    }
+
+    .page {
+        padding-left: $small-device-content-padding !important;
+        padding-right: $small-device-content-padding !important;
+        padding-bottom: $small-device-content-padding !important;
+    }
+}
+
+//dark mode
+@media (prefers-color-scheme: dark) {
+    body {
+        color: $body-color-dark !important;
+        background-color: $body-bg-dark !important;
+    }
+
+    a {
+        color: $topbar-link-color-dark !important;
+
+        &:focus,
+        &:hover {
+            color: $topbar-link-hover-color-dark !important;
+        }
+    }
+
+    .artwork-meta {
+        .date {
+            color: $meta-color-dark !important;
+        }
+    }
+
+    .badge-tag,
+    a.badge-tag {
+        color: $tag-color-dark !important;
+        background-color: $tag-background-color-dark !important;
+
+        &:hover,
+        &:focus {
+            background-color: $tag-hover-background-color-dark !important;
+        }
+    }
+
+    .topbar {
+        background-color: $topbar-color-dark !important;
+    }
+
+    .img-action {
+        background: $body-bg-dark !important;
+    }
+
+}

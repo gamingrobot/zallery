@@ -1,0 +1,6 @@
+<video {% if autoplay %}autoplay{% endif %} controls>
+    {%- set video_path = page.colocated_path ~ src %}
+    {%- set type = src | split(pat=".") | last %}
+    <source src="{{ get_url(path=video_path) }}" type="{{ 'video/' ~ type }}" />
+    Your browser doesn't support the video.
+</video>

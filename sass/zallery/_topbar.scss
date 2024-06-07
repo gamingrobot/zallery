@@ -1,0 +1,47 @@
+.topbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-top: $topbar-offset;
+  padding-bottom: $topbar-offset;
+  background-color: $topbar-color;
+  text-align: center;
+  z-index: 3;
+
+  a {
+    color: $topbar-link-color;
+    border: none;
+
+    &:focus,
+    &:hover {
+      color: $topbar-link-hover-color;
+    }
+  }
+}
+
+.topbar-text {
+  display: flex;
+  margin: auto;
+  max-width: $topbar-max-width;
+}
+
+.topbar-title {
+  padding-left: 2rem;
+  display: flex;
+  align-items: stretch;
+  font-size: $topbar-title-font-size;
+  flex: 1 1 60%;
+}
+
+.topbar-menu {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: right;
+  font-size: $topbar-links-font-size;
+
+  a {
+    padding-right: 2rem;
+  }
+}

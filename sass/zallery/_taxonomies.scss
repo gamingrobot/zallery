@@ -1,0 +1,24 @@
+.badge-tag,
+a.badge-tag {
+  color: $tag-color;
+  background-color: $tag-background-color;
+
+  &:hover,
+  &:focus {
+    background-color: $tag-hover-background-color;
+    text-decoration: none;
+    border-bottom: none;
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.4em 0.4em;
+  font-size: $tag-font-size;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}

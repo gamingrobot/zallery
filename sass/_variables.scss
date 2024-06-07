@@ -28,13 +28,6 @@ $large-font-size: 1.1rem;
 $small-device-font-size: $root-font-size;
 $large-device-font-size: $large-font-size;
 
-$body-color: $gray-9;
-$body-bg: #fff;
-
-// links
-$link-color: $gray-6;
-$link-hover-color: $blue;
-
 // heading
 $heading-font-weight: 400;
 $h1-font-size: 2.15rem;
@@ -45,28 +38,21 @@ $h4-font-size:1.3rem;
 $h5-font-size:1rem;
 
 // topbar
-$topbar-color: $gray-8;
 $topbar-title-font-size: 1.5rem;
 $topbar-links-font-size: 1rem;
 $topbar-height: 3.5rem;
 $topbar-offset: 1rem;
 $topbar-max-width: 100rem;
-$topbar-link-color: $gray-2;
-$topbar-link-hover-color: $gray-5;
 
 //copyright/poweredby
 $credit-font-size: 0.7rem;
 
-// content
+//content
 $small-device-content-padding: 0.5rem; 
 $large-device-content-padding: 1rem; 
 
-// artwork
+//artwork
 $meta-font-size: 0.8rem;
-$meta-color: $gray-7;
-$tag-color: $white;
-$tag-background-color: $gray-6;
-$tag-hover-background-color: $body-color;
 $tag-font-size: 0.8rem;
 
 //gallery
@@ -74,18 +60,39 @@ $thumbnail-info-color: $white;
 $thumbnail-info-font-size: 1.3rem;
 $thumbnail-info-font-weight: 400;
 
+/*** light mode ***/
+$body-color: $gray-9;
+$body-bg: #fff;
+
+//links
+$link-color: $gray-6;
+$link-hover-color: $blue;
+
+//topbar
+$topbar-color: $gray-8;
+$topbar-link-color: $gray-2;
+$topbar-link-hover-color: $gray-5;
+
+//artwork
+$meta-color: $gray-7;
+$tag-color: $white;
+$tag-background-color: $gray-6;
+$tag-hover-background-color: $body-color;
 
 /*** dark mode ***/
 $body-color-dark: $gray-3;
 $body-bg-dark: $gray-9;
 
+//links
 $link-color-dark: $gray-6;
 $link-hover-color-dark: $blue;
 
+//topbar
 $topbar-color-dark: $gray-7;
 $topbar-link-color-dark: $gray-2;
 $topbar-link-hover-color-dark: $gray-8;
 
+//artwork
 $meta-color-dark: $gray-7;
 $tag-color-dark: $white;
 $tag-background-color-dark: $gray-6;

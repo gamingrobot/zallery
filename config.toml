@@ -1,0 +1,39 @@
+base_url = "https://gamingrobot.github.io/zallery-demo"
+
+title = "Zallery"
+description = "Zallery"
+author = "John Doe"
+
+#theme = "zallery"
+
+compile_sass = true
+generate_feed = true
+
+taxonomies = [
+    {name = "tags", rss = false},
+]
+
+[extra]
+menu = [
+    {url = "atom.xml", name = "Feed"},
+    {url = "https://github.com/gamingrobot/zallery", name = "Github"},
+]
+
+author_url = "https://example.com"
+
+# hide_copyright = true # hide the copyright at the bottom of the page
+# hide_poweredby = true # hide the poweredby at the bottom of the page
+
+thumbnail_size = 400 # May need to adjust the media queries in _gallery.scss
+thumbnail_format = "jpg" # auto, jpg, png, webp
+thumbnail_quality = 75 # value in percentage, only for webp and jpg
+
+# optional, only applies to `img` shortcode images, when commented images will not be auto converted
+image_format = "auto" # auto, jpg, png, webp
+image_quality = 100 # value in percentage, only for webp and jpg
+
+# https://modelviewer.dev/
+modelviewer = true # set to false to disable loading modelviewer javascript
+
+# https://www.goatcounter.com/
+# goatcounter = "goatcounter-code-here"

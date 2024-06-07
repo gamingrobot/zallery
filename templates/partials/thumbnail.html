@@ -6,7 +6,7 @@
         {%- set image = resize_image(path=image_path, width=config.extra.thumbnail_size, height=config.extra.thumbnail_size, format=config.extra.thumbnail_format, quality=config.extra.thumbnail_quality, op="fill") %}
         <img src="{{ image.url }}" />
     {%- else %}
-        {%- set image = resize_image(path="static/img/missing.jpg", width=config.extra.thumbnail_size, height=config.extra.thumbnail_size, format=config.extra.thumbnail_format, quality=config.extra.thumbnail_quality, op="fill") %}
+        {%- set image = resize_image(path="img/missing.jpg", width=config.extra.thumbnail_size, height=config.extra.thumbnail_size, format=config.extra.thumbnail_format, quality=config.extra.thumbnail_quality, op="fill") %}
         <img src="{{ image.url }}" />
     {%- endif %}
         <div class=thumbnail-overlay>

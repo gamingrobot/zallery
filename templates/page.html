@@ -21,7 +21,7 @@
     {%- endif %}
     {%- if page.extra.thumbnail %}
     {%- set image_path = page.colocated_path ~ page.extra.thumbnail %}
-    {%- set image = resize_image(path=image_path, width=1500, height=1500, op="fit") %}
+    {%- set image = resize_image(path=image_path, width=1500, height=1500, format=config.extra.thumbnail_format, quality=config.extra.thumbnail_quality, op="fit") %}
         <meta content="{{ image.url }}" property="og:image"/>
         <meta content="{{ image.url }}" property="twitter:image"/>
     {%- endif %}

@@ -19,7 +19,7 @@ menu = [
     {url = "https://github.com/gamingrobot/zallery", name = "Github"},
 ]
 
-theme_color = "#313131" # color for browser header
+theme_color = "#313131" # color for browser
 
 author_url = "https://example.com"
 
@@ -28,8 +28,8 @@ hide_poweredby = false # set to true to hide the poweredby at the bottom of the 
 
 # gallery settings
 thumbnail_size = 400 # May need to adjust the media queries in _gallery.scss
-thumbnail_format = "jpg" # auto, jpg, png, webp
-thumbnail_quality = 75 # value in percentage, only for webp and jpg
+thumbnail_format = "webp" # auto, jpg, png, webp
+thumbnail_quality = 100 # value in percentage, only for webp and jpg
 
 # img shortcode settings
 covert_images = false # set to true to convert images to to the format in the image_format setting 

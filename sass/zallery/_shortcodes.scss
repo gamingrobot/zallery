@@ -27,7 +27,7 @@ figure.max-width {
     bottom: 45px;
     transform: translate(-50%);
     z-index: 1;
-    background: $body-bg;
+    background-color: $body-background-color;
     padding: 10px 10px 2px 10px;
     box-shadow: 0 .5px 2px #40404480, 0 4px 8px #00000080;
     border-radius: 8px;
@@ -76,7 +76,7 @@ video {
 
 @media (prefers-color-scheme: dark) {
     .img-action {
-        background: $body-bg-dark !important;
+        background-color: $body-background-color-dark !important;
     }
 
 }

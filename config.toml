@@ -35,7 +35,7 @@ thumbnail_quality = 100 # value in percentage, only for webp and jpg
 covert_images = false # set to true to convert images to to the format in the image_format setting 
 create_mobile_images = false # set to true to create mobile friendly versions of the image
 image_format = "webp" # auto, jpg, png, webp
-image_quality = 100 # value in percentage, only for webp and jpg
+image_quality = 90 # value in percentage, only for webp and jpg
 
 # https://modelviewer.dev/
 modelviewer = true # set to false to disable loading modelviewer javascript

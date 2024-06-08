@@ -151,7 +151,7 @@ goatcounter = ""
 - `mobile_src` (optional) - Mobile friendly version
 - `alt` (optional) - Alt text
 - `text` (optional) - Text to put under the image (if `alt` is not specified, text will be use for alt text)
-- `fit` (optioanl) - Defaults to "fit to width", can be set to `max-width` to make the image fill the width of the page
+- `fit` (optioanl) - Defaults to `fit-view`, can be set to `max-width` to make the image fill the width of the page
 
 ### `video`
 

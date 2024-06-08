@@ -13,6 +13,7 @@ Personal Portfolio: [gamingrobot.art](https://gamingrobot.art/)
 
 ## Features
 
+- Dark and Light mode
 - Auto creation of mobile friendly images
 - Auto creation of thumbnails
 - Auto conversion of images

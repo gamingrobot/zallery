@@ -48,7 +48,7 @@
 @media (prefers-color-scheme: dark) {
     body {
         color: $body-color-dark !important;
-        background-color: $body-bg-dark !important;
+        background-color: $body-background-color-dark !important;
     }
 
     a {
@@ -78,7 +78,7 @@
     }
 
     .topbar {
-        background-color: $topbar-color-dark !important;
+        background-color: $topbar-background-color-dark !important;
         a {
             color: $topbar-link-color-dark !important;
     

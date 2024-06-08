@@ -62,14 +62,14 @@ $thumbnail-info-font-weight: 400;
 
 /*** light mode ***/
 $body-color: $gray-9;
-$body-bg: #fff;
+$body-background-color: #fff;
 
 //links
 $link-color: $gray-6;
 $link-hover-color: $blue;
 
 //topbar
-$topbar-color: $gray-8;
+$topbar-background-color: $gray-8;
 $topbar-link-color: $gray-2;
 $topbar-link-hover-color: $gray-5;
 
@@ -81,14 +81,14 @@ $tag-hover-background-color: $body-color;
 
 /*** dark mode ***/
 $body-color-dark: $gray-3;
-$body-bg-dark: $gray-9;
+$body-background-color-dark: $gray-9;
 
 //links
 $link-color-dark: $gray-6;
 $link-hover-color-dark: $blue;
 
 //topbar
-$topbar-color-dark: $gray-7;
+$topbar-background-color-dark: $gray-7;
 $topbar-link-color-dark: $gray-2;
 $topbar-link-hover-color-dark: $gray-8;
 

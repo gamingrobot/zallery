@@ -48,6 +48,7 @@ figure.max-width {
 .iframe-video iframe {
     width: 100%;
     height: calc(90vh - $topbar-height);
+    aspect-ratio: 16 / 9;
 }
 
 //sketchfab

@@ -16,7 +16,7 @@
         <source media="(min-width: 0)" srcset="{{ image_medium.url }}">
         {%- endif %}
       {%- endif %}
-      <img src="{{ image.url }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
+      <img src="{{ image.url }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %}{% if nth > 1 %}loading="lazy"{% endif %}>
     {%- elif config.extra.create_mobile_images %}
       <source media="(min-width: 1200px)" srcset="{{ get_url(path=image_path) }}">
       {%- if image_meta.width >= 1440 %}
@@ -27,13 +27,13 @@
       {%- set image_medium = resize_image(path=image_path, width=1080, height=image_meta.height, format="auto", op="fit") %}
       <source media="(min-width: 0)" srcset="{{ image_medium.url }}">
       {%- endif %}
-      <img src="{{ get_url(path=image_path) }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
+      <img src="{{ get_url(path=image_path) }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %}{% if nth > 1 %}loading="lazy"{% endif %}>
     {%- else %}
       {%- if mobile_src %}
       <source media="(min-width: 768px)" srcset="{{ get_url(path=image_path) }}">
       <source media="(min-width: 0)" srcset="{{ get_url(path=page.colocated_path ~ mobile_src) }}">
       {%- endif %}
-      <img src="{{ get_url(path=image_path) }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
+      <img src="{{ get_url(path=image_path) }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %}{% if nth > 1 %}loading="lazy"{% endif %}>
     {%- endif %}
     <div class="img-action">
       <a class="action" href="{{ get_url(path=image_path) }}">{{ macros::svg_maximize() }}</a>

@@ -6,34 +6,23 @@
     {%- if config.extra.covert_images %}
       {%- set image = resize_image(path=image_path, width=image_meta.width, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
       {%- if config.extra.create_mobile_images %}
-        <source media="(min-width: 1200px)" srcset="{{ image.url }}">
         {%- if image_meta.width >= 1440 %}
-        {%- set image_large = resize_image(path=image_path, width=1440, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
-        <source media="(min-width: 768px)" srcset="{{ image_large.url }}">
-        {%- endif %}
-        {%- if image_meta.width >= 1080 %}
-        {%- set image_medium = resize_image(path=image_path, width=1080, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
-        <source media="(min-width: 0)" srcset="{{ image_medium.url }}">
+        {%- set image_mobile = resize_image(path=image_path, width=1440, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
+        <source media="(max-width: 768px)" srcset="{{ image_mobile.url }}">
         {%- endif %}
       {%- endif %}
-      <img src="{{ image.url }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %}{% if nth > 1 %}loading="lazy"{% endif %} style="aspect-ratio: {{ image_meta.width }} / {{ image_meta.height }}">
+      <img src="{{ image.url }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
     {%- elif config.extra.create_mobile_images %}
-      <source media="(min-width: 1200px)" srcset="{{ get_url(path=image_path) }}">
       {%- if image_meta.width >= 1440 %}
-      {%- set image_large = resize_image(path=image_path, width=1440, height=image_meta.height, format="auto", op="fit") %}
-      <source media="(min-width: 768px)" srcset="{{ image_large.url }}">
+      {%- set image_mobile = resize_image(path=image_path, width=1440, height=image_meta.height, format=config.extra.image_format, quality=config.extra.image_quality, op="fit") %}
+      <source media="(max-width: 768px)" srcset="{{ image_mobile.url }}">
       {%- endif %}
-      {%- if image_meta.width >= 1080 %}
-      {%- set image_medium = resize_image(path=image_path, width=1080, height=image_meta.height, format="auto", op="fit") %}
-      <source media="(min-width: 0)" srcset="{{ image_medium.url }}">
-      {%- endif %}
-      <img src="{{ get_url(path=image_path) }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %}{% if nth > 1 %}loading="lazy"{% endif %} style="aspect-ratio: {{ image_meta.width }} / {{ image_meta.height }}">
+      <img src="{{ get_url(path=image_path) }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
     {%- else %}
       {%- if mobile_src %}
-      <source media="(min-width: 768px)" srcset="{{ get_url(path=image_path) }}">
-      <source media="(min-width: 0)" srcset="{{ get_url(path=page.colocated_path ~ mobile_src) }}">
+      <source media="(max-width: 768px)" srcset="{{ get_url(path=page.colocated_path ~ mobile_src) }}">
       {%- endif %}
-      <img src="{{ get_url(path=image_path) }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %}{% if nth > 1 %}loading="lazy"{% endif %} style="aspect-ratio: {{ image_meta.width }} / {{ image_meta.height }}">
+      <img src="{{ get_url(path=image_path) }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
     {%- endif %}
     <div class="img-action">
       <a class="action" href="{{ get_url(path=image_path) }}">{{ macros::svg_maximize() }}</a>

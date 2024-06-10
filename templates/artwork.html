@@ -15,7 +15,7 @@
         {%- endif -%}
         {%- if page.taxonomies.tags -%}
         {% for tag in page.taxonomies.tags %}
-            <a class="badge badge-tag" href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>
+            <p><a class="badge badge-tag" href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a></p>
         {% endfor %}
         {%- endif %}
     </div>

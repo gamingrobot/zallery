@@ -4,10 +4,10 @@
     {%- if page.extra.thumbnail %}
         {%- set image_path = page.colocated_path ~ page.extra.thumbnail %}
         {%- set image = resize_image(path=image_path, width=config.extra.thumbnail_size, height=config.extra.thumbnail_size, format=config.extra.thumbnail_format, quality=config.extra.thumbnail_quality, op="fill") %}
-        <img src="{{ image.url }}" />
+        <img width="{{ config.extra.thumbnail_size }}" height="{{ config.extra.thumbnail_size }}" src="{{ image.url }}" />
     {%- else %}
-        {%- set image = resize_image(path="img/missing.jpg", width=config.extra.thumbnail_size, height=config.extra.thumbnail_size, format=config.extra.thumbnail_format, quality=config.extra.thumbnail_quality, op="fill") %}
-        <img src="{{ image.url }}" />
+        {%- set image = resize_image(path="img/missing.webp", width=config.extra.thumbnail_size, height=config.extra.thumbnail_size, format=config.extra.thumbnail_format, quality=config.extra.thumbnail_quality, op="fill") %}
+        <img width="{{ config.extra.thumbnail_size }}" height="{{ config.extra.thumbnail_size }}" src="{{ image.url }}" />
     {%- endif %}
         <div class=thumbnail-overlay>
             <div class=thumbnail-info>

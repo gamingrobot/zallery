@@ -120,11 +120,21 @@ image_format = "webp" # auto, jpg, png, webp
 image_quality = 90 # value in percentage, only for webp and jpg
 ```
 
+### Frontmatter settings
+
+These settings are for the frontmatter on each artwork
+
+```toml
+[extra]
+thumbnail = "image.jpg" # image to resize into a thumbnail and cover image
+modelviewer = true # enable modelviewer javascript for this artwork
+```
+
 ### Javascript libraries
 
 #### ModelViewer
 
-Set to `true` to enable [modelviewer](https://modelviewer.dev/) support
+Set to `true` to enable [modelviewer](https://modelviewer.dev/) support. This can be set in the artwork frontmatter or in `config.toml`
 
 ```toml
 [extra]
@@ -144,7 +154,7 @@ goatcounter = ""
 
 ### `img`
 
-```
+```jinja2
 {{ img(src="image.jpg", mobile_src="image-mobile.jpg", alt="alt text", text="text", fit="") }}
 ```
 
@@ -156,7 +166,7 @@ goatcounter = ""
 
 ### `video`
 
-```
+```jinja2
 {{ video(src="image.jpg", autoplay=false) }}
 ```
 
@@ -165,7 +175,7 @@ goatcounter = ""
 
 ### `youtube` / `vimeo`
 
-```
+```jinja2
 {{ youtube(id="", autoplay=false) }}
 {{ vimeo(id="", autoplay=false) }}
 ```
@@ -177,7 +187,7 @@ goatcounter = ""
 
 Note: Requires `modelviewer` to be enabled in `config.toml`
 
-```
+```jinja2
 {{ model(src="image.jpg", skybox="", poster="") }}
 ```
 
@@ -188,7 +198,7 @@ Note: Requires `modelviewer` to be enabled in `config.toml`
 
 ### `sketchfab`
 
-```
+```jinja2
 {{ sketchfab(id="") }}
 ```
 

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class=artwork>
+<section class=artwork-view>
+    {{ page.content | safe }}
+    {% include "partials/credit.html" %}
+</section>
+<aside class=artwork-sidebar>
+    <h1>{{ page.title }}</h1>
+    <div class=artwork-meta>
+        <span class=date>{{ page.date | date(format="%b %d, %Y") }}</span>
+        {% if page.description -%}
+            <p>{{ page.description | markdown(inline=true) | safe }}</p>
+        {%- endif -%}
+        {%- if page.taxonomies.tags -%}
+        {% for tag in page.taxonomies.tags %}
+            <a class="badge badge-tag" href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>
+        {% endfor %}
+        {%- endif %}
+    </div>
+    {% include "partials/credit.html" %}
+</aside>
+</div>
+{% endblock content %}
+
+{% block js_body %}
+{% if config.extra.modelviewer or page.extra.modelviewer %}
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+{% endif %}
+{% endblock js_body %}
+

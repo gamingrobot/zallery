@@ -26,7 +26,14 @@
     }
 
     .artwork-view {
-        padding-bottom: 0 !important;
+        padding-right: $small-device-content-padding !important;
+        padding-left: $small-device-content-padding !important;
+    }
+
+    .artwork-sidebar {
+        padding-right: $small-device-content-padding !important;
+        padding-left: $small-device-content-padding !important;
+        padding-top: 0 !important;
     }
 
     .artwork-view .credit {

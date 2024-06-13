@@ -29,7 +29,7 @@ hide_poweredby = false # set to true to hide the poweredby at the bottom of the 
 # gallery settings
 thumbnail_size = 400 # size in pixels, you may need to adjust the media queries in _gallery.scss
 thumbnail_format = "webp" # auto, jpg, png, webp
-thumbnail_quality = 100 # value in percentage, only for webp and jpg
+thumbnail_quality = 90 # value in percentage, only for webp and jpg
 
 # img shortcode settings
 covert_images = false # set to true to convert images to to the format in the image_format setting 

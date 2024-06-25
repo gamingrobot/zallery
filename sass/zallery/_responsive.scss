@@ -73,6 +73,10 @@
         }
     }
 
+    .medium-zoom-overlay {
+        background-color: $body-background-color-dark !important;
+    }
+
     .badge-tag,
     a.badge-tag {
         color: $tag-color-dark !important;

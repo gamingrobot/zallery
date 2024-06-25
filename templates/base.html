@@ -13,8 +13,10 @@
         </title>
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ get_url(path="apple-touch-icon-144-precomposed.png") }}">
         <link href="{{ get_url(path="favicon.png") }}" rel="icon" type="image/x-icon"/>
-        {%- if config.generate_feed %}
-            <link rel="alternate" type={% if config.feed_filename == "atom.xml" %} "application/atom+xml" {% else %} "application/rss+xml" {% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}"/>
+        {%- if config.generate_feeds %}
+        {% for feed in config.feed_filenames %}
+            <link rel="alternate" type={% if feed == "atom.xml" %} "application/atom+xml" {% else %} "application/rss+xml" {% endif %} title="RSS" href="{{ get_url(path=feed) | safe }}"/>
+        {% endfor %}
         {%- endif %}
         {% block metadata %}
             <meta content="website" property="og:type"/>
@@ -29,6 +31,10 @@
                 <meta content="{{ section.description }}" property="og:description"/>
                 <meta content="{{ section.description }}" property="description"/>
                 <meta content="{{ section.description }}" property="twitter:description"/>
+            {%- endif %}
+            {%- if config.extra.cover_image %}
+                <meta content="{{ get_url(path=config.extra.cover_image) }}" property="og:image"/>
+                <meta content="{{ get_url(path=config.extra.cover_image) }}" property="twitter:image"/>
             {%- endif %}
         {% endblock metadata %}
         {# CSS #}

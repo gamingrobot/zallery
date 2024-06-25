@@ -7,7 +7,7 @@ author = "John Doe"
 #theme = "zallery"
 
 compile_sass = true
-generate_feed = true
+generate_feeds = true
 
 taxonomies = [
     {name = "tags", rss = false},
@@ -22,6 +22,7 @@ menu = [
 theme_color = "#313131" # color for browser
 
 author_url = "https://example.com"
+cover_image = "img/cover.webp" # cover image on main gallery pages for opengraph and twitter embeds 
 
 hide_copyright = false # set to true to hide the copyright at the bottom of the page
 hide_poweredby = false # set to true to hide the poweredby at the bottom of the page
@@ -39,6 +40,9 @@ image_quality = 90 # value in percentage, only for webp and jpg
 
 # https://modelviewer.dev/
 modelviewer = true # set to false to disable loading modelviewer javascript
+
+# https://github.com/francoischalifour/medium-zoom
+jszoom = true # set to false to disable javascript based image zoom (will fallback to link to the full image with a button)
 
 # https://www.goatcounter.com/
 # goatcounter = "goatcounter-code-here"

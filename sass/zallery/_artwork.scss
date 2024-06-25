@@ -62,3 +62,12 @@
 .artwork-sidebar .credit {
     display: none;
 }
+
+.medium-zoom-overlay {
+    background-color: $body-background-color;
+}
+
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 10;
+}

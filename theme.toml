@@ -2,7 +2,7 @@ name = "zallery"
 description = "Gallery theme for zola"
 license = "MIT"
 homepage = "https://github.com/gamingrobot/zallery"
-min_version = "0.18.0"
+min_version = "0.19.0"
 demo = "https://gamingrobot.github.io/zallery-demo"
 
 [extra]

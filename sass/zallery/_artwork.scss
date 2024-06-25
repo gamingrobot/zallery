@@ -18,11 +18,11 @@
 .artwork-view > * { //all children art
     margin-left: 0;
     margin-right: 0;
-    padding-top: 1.25rem;
+    margin-top: 1.25rem;
 }
 
 .artwork-view > p > img { //handle pure markdown images
-    padding-top: 1.25rem;
+    margin-top: 1.25rem;
 }
 
 .artwork-view > p {

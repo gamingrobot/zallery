@@ -31,8 +31,8 @@
 {% if config.extra.jszoom %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj+Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    const images = Array.from(document.querySelectorAll(".artwork-view img"));
-    images.forEach((img) => { mediumZoom(img, { margin: 0, background: "", scrollOffset: 0, container: null, template: null }); });
+const images = Array.from(document.querySelectorAll(".artwork-view img"));
+images.forEach((img) => { mediumZoom(img, { margin: 0, background: "", scrollOffset: 40, container: null, template: null }); });
 </script>  
 {% endif %}
 {% endblock js_body %}

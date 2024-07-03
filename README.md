@@ -81,6 +81,15 @@ Url used for the name in the copyright
 author_url = "https://example.com"
 ```
 
+### Cover Image
+
+Cover image to use on the main gallery pages for opengraph and twitter embeds
+
+```toml
+[extra]
+cover_image = "img/cover.webp"
+```
+
 ### Copyright and Powered by
 
 To hide the copyright set this to `true`
@@ -134,11 +143,20 @@ modelviewer = true # enable modelviewer javascript for this artwork
 
 #### ModelViewer
 
-Set to `true` to enable [modelviewer](https://modelviewer.dev/) support. This can be set in the artwork frontmatter or in `config.toml`
+Set to `true` to enable [modelviewer](https://modelviewer.dev/) support. This can also be set in the artwork frontmatter or in `config.toml`
 
 ```toml
 [extra]
 modelviewer = true
+```
+
+#### JSZoom
+
+Set to `true` to enable [javascript zoom](https://github.com/francoischalifour/medium-zoom) support.
+
+```toml
+[extra]
+jszoom = true
 ```
 
 #### GoatCounter

@@ -37,6 +37,9 @@
                 <meta content="{{ get_url(path=config.extra.cover_image) }}" property="twitter:image"/>
             {%- endif %}
         {% endblock metadata %}
+        {% block font_preload %}
+            <link rel="preload" href="{{ get_url(path="fonts/inter/InterVariable.woff2") }}" as="font" type="font/woff2">
+        {% endblock font_preload %}
         {# CSS #}
         {% block css %}
             <link href="{{ get_url(path="fonts.css") }}" rel="stylesheet" type="text/css"/>

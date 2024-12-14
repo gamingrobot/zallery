@@ -1,6 +1,9 @@
 +++
 title = "Example"
-description = "Basic example for more examples see the [demo site](https://gamingrobot.github.io/zallery-demo)"
+description = """Basic example for more examples see the [demo site](https://gamingrobot.github.io/zallery-demo)
+
+Image credit: [eberhard grossgasteiger](https://www.pexels.com/photo/scenic-view-of-rocky-mountain-during-evening-1624438/)
+"""
 date = 2024-11-01
 [taxonomies]
 tags = ["Example"]

@@ -7,6 +7,8 @@
 
 .artwork-view,
 .artwork-sidebar {
+    position: relative;
+    height: auto;
     overflow-y: auto;
 
     h1 {
@@ -70,4 +72,29 @@
 .medium-zoom-overlay,
 .medium-zoom-image--opened {
   z-index: 10;
+}
+
+.artwork-nav {
+    position: sticky;
+    cursor: pointer;
+    z-index: 2;
+    top: 0;
+    height: 100%;
+    margin-top: -100%; //make the element take up no space
+    display: flex;
+    align-items:center;
+}
+
+.artwork-prev {
+    float: left;
+    padding-right: 1rem;
+}
+
+.artwork-next {
+    float: right;
+    padding-left: 1rem;
+}
+
+.artwork-nav-word {
+    visibility: hidden;
 }

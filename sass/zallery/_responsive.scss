@@ -28,6 +28,7 @@
     .artwork-view {
         padding-right: $small-device-content-padding !important;
         padding-left: $small-device-content-padding !important;
+        padding-bottom: $small-device-content-padding !important;
     }
 
     .artwork-sidebar {
@@ -42,6 +43,17 @@
 
     .artwork-sidebar .credit {
         display: unset !important;
+    }
+
+    .artwork-nav {
+        margin-top: 0 !important;
+        padding-top: $small-device-content-padding !important;
+        padding-bottom: $small-device-content-padding !important;
+        height: unset !important;
+    }
+
+    .artwork-nav-word {
+        visibility: visible !important;
     }
 
     .page {

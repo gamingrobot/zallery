@@ -3,6 +3,12 @@
 {% block content %}
 <div class=artwork>
 <section class=artwork-view>
+    {% if page.lower %}
+    <a class="artwork-nav artwork-prev action" href="{{ page.lower.permalink }}">{{ macros::svg_left() }}<span class=artwork-nav-word> Prev</span></a>
+    {% endif %}
+    {% if page.higher %}
+    <a class="artwork-nav artwork-next action" href="{{ page.higher.permalink }}"><span class=artwork-nav-word>Next </span>{{ macros::svg_right() }}</a>
+    {% endif %}
     {{ page.content | safe }}
     {% include "partials/credit.html" %}
 </section>

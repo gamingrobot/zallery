@@ -32,7 +32,7 @@ Clone the theme into the themes folder:
 git clone https://github.com/gamingrobot/zallery.git themes/zallery
 ```
 
-Note: It is recomended that you copy the `config.toml` from the `themes/zallery` folder to the root folder of your site.
+Note: It is recommended that you copy the `config.toml` from the `themes/zallery` folder to the root folder of your site.
 
 Then set your theme setting in `config.toml` to `zallery`:
 
@@ -182,7 +182,7 @@ goatcounter = ""
 - `mobile_src` (optional) - Mobile friendly version
 - `alt` (optional) - Alt text
 - `text` (optional) - Text to put under the image (if `alt` is not specified, text will be use for alt text)
-- `fit` (optioanl) - Defaults to `fit-view`, can be set to `max-width` to make the image fill the width of the page
+- `fit` (optional) - Defaults to `fit-view`, can be set to `max-width` to make the image fill the width of the page
 
 ### `video`
 

@@ -18,6 +18,7 @@ Personal Portfolio: [gamingrobot.art](https://gamingrobot.art/)
 - Auto creation of thumbnails
 - Auto conversion of images
 - Maximize button on images
+- Next and Previous artwork buttons
 - [medium-zoom](https://github.com/francoischalifour/medium-zoom) support
 - [ModelViewer](https://modelviewer.dev/) and [Sketchfab](https://sketchfab.com/) support
 - Video embed support

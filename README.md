@@ -193,6 +193,7 @@ goatcounter = ""
 
 - `src` (required) - Video path
 - `autoplay` (optional) - Set to `true` to enable autoplay
+- `loop` (optional) - Set to `true` to enable looping
 
 ### `youtube` / `vimeo`
 

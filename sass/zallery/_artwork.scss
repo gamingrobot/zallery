@@ -32,8 +32,6 @@
 }
 
 .artwork-view {
-    padding-left: $large-device-content-padding;
-    padding-right: $large-device-content-padding;
     padding-bottom: $large-device-content-padding;
     flex: 4;
     text-align: center;
@@ -77,11 +75,10 @@
 }
 
 .artwork-nav {
-    position: relative;
+    position: sticky;
     cursor: pointer;
-    z-index: 2;
     top: 0;
-    height: 100%;
+    height: 100vh;
     display: flex;
     align-items:center;
     svg {
@@ -89,14 +86,12 @@
     }
 }
 
-.artwork-nav-prev {
-    float: left;
-    left: 0.5rem;
+.artwork-pad-right {
+    padding-right: $large-device-content-padding;
 }
 
-.artwork-nav-next {
-    right: 0.5rem;
-    float: right;
+.artwork-pad-left {
+    padding-left: $large-device-content-padding;
 }
 
 .artwork-nav-mobile {
@@ -105,6 +100,14 @@
     svg {
         vertical-align: middle;
     }
+}
+
+.mobile-prev {
+    float: left;
+}
+
+.mobile-next {
+    float: right;
 }
 
 .artwork-nav-word {	

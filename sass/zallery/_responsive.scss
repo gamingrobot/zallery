@@ -58,6 +58,14 @@
         padding-right: $small-device-content-padding !important;
         padding-bottom: $small-device-content-padding !important;
     }
+
+    .artwork-pad-right {
+        padding-right: 0 !important;
+    }
+    
+    .artwork-pad-left {
+        padding-left: 0 !important;
+    }
 }
 
 //dark mode

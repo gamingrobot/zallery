@@ -112,7 +112,7 @@ a {
 .page {
     display: flex;
     flex-direction: column;
-    padding-top: $topbar-height;
+    margin-top: $topbar-height;
     padding-left: $large-device-content-padding;
     padding-right: $large-device-content-padding;
     padding-bottom: $large-device-content-padding;

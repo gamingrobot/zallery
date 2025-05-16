@@ -1,7 +1,6 @@
 .artwork {
-    padding-top: $topbar-height;
+    margin-top: $topbar-height;
     display: flex;
-    height: 100vh;
     flex: 1;
 }
 
@@ -59,6 +58,9 @@
 .artwork-sidebar {
     flex: 1;
     padding: $large-device-content-padding;
+    position: sticky;
+    top: 0;
+    height: 100vh;
 }
 
 .artwork-sidebar .credit {
@@ -75,26 +77,36 @@
 }
 
 .artwork-nav {
-    position: sticky;
+    position: relative;
     cursor: pointer;
     z-index: 2;
     top: 0;
     height: 100%;
-    margin-top: -100%; //make the element take up no space
     display: flex;
     align-items:center;
+    svg {
+        vertical-align: middle;
+    }
 }
 
-.artwork-prev {
+.artwork-nav-prev {
     float: left;
-    padding-right: 1rem;
+    left: 0.5rem;
 }
 
-.artwork-next {
+.artwork-nav-next {
+    right: 0.5rem;
     float: right;
-    padding-left: 1rem;
 }
 
-.artwork-nav-word {
-    visibility: hidden;
+.artwork-nav-mobile {
+    padding-bottom: $small-device-content-padding;
+    display: none;
+    svg {
+        vertical-align: middle;
+    }
+}
+
+.artwork-nav-word {	
+    vertical-align: middle;
 }

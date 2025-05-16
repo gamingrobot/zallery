@@ -2,31 +2,43 @@
 
 {% block content %}
 <div class=artwork>
-<section class=artwork-view>
-    {% if page.lower %}
-    <a class="artwork-nav artwork-prev action" href="{{ page.lower.permalink }}">{{ macros::svg_left() }}<span class=artwork-nav-word> Prev</span></a>
-    {% endif %}
-    {% if page.higher %}
-    <a class="artwork-nav artwork-next action" href="{{ page.higher.permalink }}"><span class=artwork-nav-word>Next </span>{{ macros::svg_right() }}</a>
-    {% endif %}
-    {{ page.content | safe }}
-    {% include "partials/credit.html" %}
-</section>
-<aside class=artwork-sidebar>
-    <h1>{{ page.title }}</h1>
-    <div class=artwork-meta>
-        <span class=date>{{ page.date | date(format="%b %d, %Y") }}</span>
-        {% if page.description -%}
-            <p>{{ page.description | markdown(inline=true) | safe }}</p>
-        {%- endif -%}
-        {%- if page.taxonomies.tags -%}
-        {% for tag in page.taxonomies.tags %}
-            <p><a class="badge badge-tag" href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a></p>
-        {% endfor %}
-        {%- endif %}
-    </div>
-    {% include "partials/credit.html" %}
-</aside>
+    <section class="artwork-nav artwork-nav-prev">
+        {% if page.lower %}
+        <a class="action" href="{{ page.lower.permalink }}">{{ macros::svg_left() }}</a>
+        {% endif %}
+    </section>
+    <section class=artwork-view>
+        {{ page.content | safe }}
+        {% include "partials/credit.html" %}
+    </section>
+    <section class="artwork-nav artwork-nav-next">
+        {% if page.higher %}
+        <a class="action" href="{{ page.higher.permalink }}">{{ macros::svg_right() }}</a>
+        {% endif %}
+    </section>
+    <section class="artwork-nav-mobile">
+        {% if page.lower %}
+        <a class="artwork-nav-prev action" href="{{ page.lower.permalink }}">{{ macros::svg_left() }}<span class=artwork-nav-word> Previous</span></a>
+        {% endif %}
+        {% if page.higher %}
+        <a class="artwork-nav-next action" href="{{ page.higher.permalink }}"><span class=artwork-nav-word>Next </span>{{ macros::svg_right() }}</a>
+        {% endif %}
+    </section>
+    <aside class=artwork-sidebar>
+        <h1>{{ page.title }}</h1>
+        <div class=artwork-meta>
+            <span class=date>{{ page.date | date(format="%b %d, %Y") }}</span>
+            {% if page.description -%}
+                <p>{{ page.description | markdown(inline=true) | safe }}</p>
+            {%- endif -%}
+            {%- if page.taxonomies.tags -%}
+            {% for tag in page.taxonomies.tags %}
+                <p><a class="badge badge-tag" href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a></p>
+            {% endfor %}
+            {%- endif %}
+        </div>
+        {% include "partials/credit.html" %}
+    </aside>
 </div>
 {% endblock content %}
 

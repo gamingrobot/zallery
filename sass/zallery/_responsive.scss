@@ -46,14 +46,11 @@
     }
 
     .artwork-nav {
-        margin-top: 0 !important;
-        padding-top: $small-device-content-padding !important;
-        padding-bottom: $small-device-content-padding !important;
-        height: unset !important;
+        display: none !important;
     }
 
-    .artwork-nav-word {
-        visibility: visible !important;
+    .artwork-nav-mobile {
+        display: unset !important;
     }
 
     .page {

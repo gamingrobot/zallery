@@ -39,6 +39,7 @@
     img {
         max-width: 100%;
         max-height: calc(90vh - $topbar-height);
+        border-radius: 5px;
     }
 }
 

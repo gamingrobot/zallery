@@ -8,6 +8,7 @@
   background-color: $topbar-background-color;
   text-align: center;
   z-index: 3;
+  line-height: 1;
 
   a {
     color: $topbar-link-color;
@@ -29,7 +30,7 @@
 .topbar-title {
   padding-left: 2rem;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   font-size: $topbar-title-font-size;
   flex: 1 1 60%;
 }
@@ -37,7 +38,7 @@
 .topbar-menu {
   flex: 1 1 auto;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: right;
   font-size: $topbar-links-font-size;
 

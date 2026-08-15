@@ -3,7 +3,7 @@
 Gallery and portfolio theme for [Zola](https://getzola.org).
 
 Demo Site: [gamingrobot.github.io/zallery-demo](https://gamingrobot.github.io/zallery-demo/)  
-Personal Portfolio: [gamingrobot.art](https://gamingrobot.art/)
+Personal Portfolio: [grbt.art](https://grbt.art/)
 
 ## Screenshots
 

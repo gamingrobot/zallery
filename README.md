@@ -192,8 +192,8 @@ goatcounter = ""
 ```
 
 - `src` (required) - Video path
+- `text` (optional) - Text to put under the video
 - `autoplay` (optional) - Set to `true` to enable autoplay
-- `loop` (optional) - Set to `true` to enable looping
 
 ### `youtube` / `vimeo`
 

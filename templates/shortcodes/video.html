@@ -1,8 +1,9 @@
-{% component video(@page, src, autoplay=false) %}
+{% component video(@page, src, text="", autoplay=false) %}
 <video {% if autoplay %}autoplay{% endif %} {% if loop %}loop{% endif %} controls>
     {%- set video_path = page.colocated_path ~ src %}
     {%- set type = src | split(pat=".") | last %}
     <source src="{{ get_url(path=video_path) }}" type="{{ 'video/' ~ type }}" />
     Your browser doesn't support the video.
 </video>
+{%- if text %}<p class="video-caption">{{ text }}</p>{% endif %}
 {% endcomponent video %}

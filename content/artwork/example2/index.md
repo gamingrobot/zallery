@@ -11,4 +11,4 @@ tags = ["Example"]
 thumbnail = "pexels-eberhardgross-1287145.jpg"
 +++
 
-{{ img(src="pexels-eberhardgross-1287145.jpg", alt="landscape", text="Caption Text") }}
+{{ <img src="pexels-eberhardgross-1287145.jpg" alt="landscape" text="Caption Text"/> }}

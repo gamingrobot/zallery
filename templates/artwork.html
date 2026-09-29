@@ -4,7 +4,7 @@
 <div class=artwork>
     <section class="artwork-nav">
         {% if page.lower %}
-        <a class="action" href="{{ page.lower.permalink }}">{{ macros::svg_left() }}</a>
+        <a class="action" href="{{ page.lower.permalink }}">{{ <svg_left/> }}</a>
         {% endif %}
     </section>
     <section class="artwork-view{% if not page.lower %} artwork-pad-left{% endif %}{% if not page.higher %} artwork-pad-right{% endif %}">
@@ -13,15 +13,15 @@
     </section>
     <section class="artwork-nav">
         {% if page.higher %}
-        <a class="action" href="{{ page.higher.permalink }}">{{ macros::svg_right() }}</a>
+        <a class="action" href="{{ page.higher.permalink }}">{{ <svg_right/> }}</a>
         {% endif %}
     </section>
     <section class="artwork-nav-mobile">
         {% if page.lower %}
-        <a class="mobile-prev action" href="{{ page.lower.permalink }}">{{ macros::svg_left() }}<span class=artwork-nav-word> Previous</span></a>
+        <a class="mobile-prev action" href="{{ page.lower.permalink }}">{{ <svg_left/> }}<span class=artwork-nav-word> Previous</span></a>
         {% endif %}
         {% if page.higher %}
-        <a class="mobile-next action" href="{{ page.higher.permalink }}"><span class=artwork-nav-word>Next </span>{{ macros::svg_right() }}</a>
+        <a class="mobile-next action" href="{{ page.higher.permalink }}"><span class=artwork-nav-word>Next </span>{{ <svg_right/> }}</a>
         {% endif %}
     </section>
     <aside class=artwork-sidebar>

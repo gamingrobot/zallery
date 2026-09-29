@@ -1,3 +1,4 @@
+{% component model(@page, src, skybox="", poster="", alt="") %}
 <model-viewer class="model-viewer"
     camera-controls
     disable-zoom
@@ -8,3 +9,4 @@
     {% if alt %}alt="{{ alt }}"{% endif %}
     loading="lazy">
 </model-viewer>
+{% endcomponent model %}

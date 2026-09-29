@@ -1,4 +1,4 @@
-{% import "partials/macros.html" as macros %}
+{% component img(@page, @config, src, mobile_src="", fit="", alt="", text="") %}
 <figure {% if fit %}class={{ fit }}{% endif %}>
   <picture>
     {%- set image_path = page.colocated_path ~ src %}
@@ -25,7 +25,7 @@
       <img src="{{ get_url(path=image_path) }}" {% if alt %}alt="{{ alt }}"{% elif text %}alt="{{ text }}"{% endif %} loading="lazy">
     {%- endif %}
     <div class="img-action">
-      <a class="action" href="{{ get_url(path=image_path) }}">{{ macros::svg_maximize() }}</a>
+      <a class="action" href="{{ get_url(path=image_path) }}">{{ <svg_maximize/> }}</a>
     </div>
   </picture>
   {%- if text %}
@@ -34,3 +34,4 @@
   </figcaption>
   {%- endif %}
 </figure>
+{% endcomponent img %}

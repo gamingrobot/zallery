@@ -1,3 +1,4 @@
+{% component vimeo(id, autoplay=false) %}
 <div class="iframe-video">
     <iframe width="540px" height="315px"
         src="https://player.vimeo.com/video/{{id}}?embedded=true{% if autoplay %}&autoplay=1{% endif %}" title="Vimeo video player"
@@ -6,3 +7,4 @@
         webkitallowfullscreen mozallowfullscreen allowfullscreen
         loading="lazy"></iframe>
 </div>
+{% endcomponent vimeo %}

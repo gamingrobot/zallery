@@ -176,7 +176,7 @@ goatcounter = ""
 ### `img`
 
 ```jinja2
-{{ img(src="image.jpg", mobile_src="image-mobile.jpg", alt="alt text", text="text", fit="") }}
+{{ <img src="image.jpg" mobile_src="image-mobile.jpg" alt="alt text" text="text" fit=""/> }}
 ```
 
 - `src` (required) - Image path
@@ -188,7 +188,7 @@ goatcounter = ""
 ### `video`
 
 ```jinja2
-{{ video(src="image.jpg", autoplay=false) }}
+{{ <video src="image.jpg" autoplay={true}/> }}
 ```
 
 - `src` (required) - Video path
@@ -198,8 +198,8 @@ goatcounter = ""
 ### `youtube` / `vimeo`
 
 ```jinja2
-{{ youtube(id="", autoplay=false) }}
-{{ vimeo(id="", autoplay=false) }}
+{{ <youtube id="" autoplay={true}/> }}
+{{ <vimeo id="" autoplay={true}/> }}
 ```
 
 - `id` (required) - Id of the video
@@ -210,7 +210,7 @@ goatcounter = ""
 Note: Requires `modelviewer` to be enabled in `config.toml`
 
 ```jinja2
-{{ model(src="image.jpg", skybox="", poster="") }}
+{{ <model src="image.jpg" skybox="" poster=""/> }}
 ```
 
 - `src` (required) - Model path
@@ -221,7 +221,7 @@ Note: Requires `modelviewer` to be enabled in `config.toml`
 ### `sketchfab`
 
 ```jinja2
-{{ sketchfab(id="") }}
+{{ <sketchfab id=""/> }}
 ```
 
 - `id` (required) - Id of the model
